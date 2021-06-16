@@ -1,4 +1,4 @@
-header {
+header.header {
   height: 400px;
   width: 100%;
   display: flex;
@@ -6,4 +6,5 @@ header {
   align-items: center;
   justify-content: center;
   background: url("../images/asfalt-light.png");
+  background-color: #DDD4AF;
 }

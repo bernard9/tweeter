@@ -1,0 +1,37 @@
+section.past-tweets{
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+article.tweets{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 1em;
+  border: solid 5px;
+}
+
+article.tweets:hover{
+  box-shadow: 7px 7px #6699cc;
+}
+
+article.tweets header{
+  display: flex;
+  justify-content: space-between;
+}
+
+article.tweets footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: solid 5px;
+  padding: 0.5em;
+}
+
+article.tweets i:hover{
+  color:#6699cc;
+}
+
+#man{
+  width: 10%;
+}

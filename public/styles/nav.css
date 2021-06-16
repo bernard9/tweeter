@@ -1,4 +1,4 @@
-nav{
+nav {
   height: 120px;
   width: 100%;
   background-color: #4056A1;
@@ -7,7 +7,8 @@ nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 1;
+  top: 0;
+  position:sticky;
 }
 
 nav #header{
@@ -15,7 +16,7 @@ nav #header{
   font-size: 50px;
 }
 
-nav .right{
+nav.right{
   display:flex;
   flex-direction: column;
   align-items: center;

@@ -61,17 +61,23 @@ $(document).ready(function() {
 
   $("form").on('submit', function(event) {
     event.preventDefault();
-    const content = $('');
-    $.ajax({
-      url: "/tweets",
-      method: "POST",
-      data: $(this).serialize(),
-      success: function() {
-        $("#tweet-text").val("").focus();
-        $(".counter").text("140");
-        loadTweets();
-      }
-    });
+    const content = $("#tweet-text").val();
+    if (content.length > 140) {
+      alert("Message exceeds 140 characters");
+    } else if (content === '') {
+      alert("Message is empty");
+    } else {
+      $.ajax({
+        url: "/tweets",
+        method: "POST",
+        data: $(this).serialize(),
+        success: function() {
+          $("#tweet-text").val("").focus();
+          $(".counter").text("140");
+          loadTweets();
+        }
+      });
+    }
   });
   loadTweets();
 });

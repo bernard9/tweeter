@@ -6,22 +6,21 @@
 
 $(document).ready(function() {
 
-  const time = $(".time-ago").attr("datetime");
-  const newTime = timeago.format(time);
-  $(".time-ago").text(newTime);
 
   const createTweetElement = function(tweet) {
+    const time = tweet.created_at;
+    const newTime = timeago.format(time);
     let $tweet = $(`<article class="tweets">
 <header>
   <div class="user-icon">
-    <img id="man" src="/images/man.png"> 
-    <span>Newton</span>
+    <img src="${tweet.user.avatars}"> 
+    <span>${tweet.user.name}</span>
   </div>
-  <span>@SirIssac</span>
+  <span>${tweet.user.handle}</span>
 </header>
-<p>If I have seen further it is by standing on the shoulders giants</p>
+<p>${tweet.content.text}</p>
 <footer>
-  <span class="time-ago" datetime="June 15, 2021"></span>
+  <span class="time-ago">${newTime}</span>
   <div class="icons">
     <i class="fas fa-flag"></i>
     <i class="fas fa-retweet"></i>
@@ -39,9 +38,10 @@ $(document).ready(function() {
 
     // gets "past-tweets" section
     const $tweets = $('.past-tweets');
+    $tweets.empty();
     for (const tweet of tweets) {
       const newTweet = createTweetElement(tweet);
-      $tweets.append(newTweet);
+      $tweets.prepend(newTweet);
     }
   };
 
@@ -57,6 +57,7 @@ $(document).ready(function() {
         console.error(error);
       }
     });
+    return false;
   };
 
   $("form").on('submit', function(event) {

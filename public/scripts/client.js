@@ -57,15 +57,20 @@ $(document).ready(function() {
         console.error(error);
       }
     });
-    return false;
   };
 
   $("form").on('submit', function(event) {
     event.preventDefault();
+    const content = $('');
     $.ajax({
       url: "/tweets",
       method: "POST",
       data: $(this).serialize(),
+      success: function() {
+        $("#tweet-text").val("").focus();
+        $(".counter").text("140");
+        loadTweets();
+      }
     });
   });
   loadTweets();

@@ -27,12 +27,12 @@
   padding: 0.25em;
   border-radius: 15px;
   outline: none;
-  box-shadow: lightslategrey 0 5px;
+  box-shadow: lightslategrey 0 7px;
 
 }
 
 .tweet-button:active {
-  box-shadow: 0 5px;
+  box-shadow: lightslategrey 0 0px;
   transform: translateY(4px);
 
 }

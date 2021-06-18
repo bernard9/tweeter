@@ -27,6 +27,32 @@ nav .right{
   align-items: center;
 }
 
-nav i {
-  color:red
+.nav-button {
+  color:red;
+  background: transparent;
+  border: none;
+}
+
+.nav-button:hover {
+  color:white;
+  animation: bounce 0.5s linear infinite;
+}
+@keyframes bounce{
+0%{
+  transform: translateY(0px)
+}
+45%{
+  transform: translateY(5px)
+}
+65%{
+transform: translateY(10px)
+}
+85%{
+transform: translateY(20px)
+}
+}
+
+.nav-button:active {
+  color:white;
+  transform: translateY(4px);
 }

@@ -6,12 +6,14 @@
 
 $(document).ready(function() {
 
-  const escape = function (str) {
+  // prevents scripts from running when entered in textarea
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-  
+
+  // creates a HTML container with information entered in new tweets
   const createTweetElement = function(tweet) {
     const time = tweet.created_at;
     const newTime = timeago.format(time);
@@ -36,12 +38,8 @@ $(document).ready(function() {
     return $tweet;
   };
 
+  // calls createTweetElement and prepends tweets to existing list
   const renderTweets = function(tweets) {
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
-
-    // gets "past-tweets" section
     const $tweets = $('.past-tweets');
     $tweets.empty();
     for (const tweet of tweets) {
@@ -50,6 +48,7 @@ $(document).ready(function() {
     }
   };
 
+  // loads tweets as soon as page loads
   const loadTweets = function() {
     $.ajax({
       url: "/tweets",
@@ -64,6 +63,14 @@ $(document).ready(function() {
     });
   };
 
+  // nav arrow button hides textarea by default, toggles show and hide
+  $('.new-tweet').hide();
+  $('.nav-button').on("click", function() {
+    $('.new-tweet').toggle();
+  });
+
+  // detects if no characters (excluding start and end spaces), or over 140 characters.
+  // If neither: clear textarea, reset counter, clear any error text and prepend new Tweet element to list.
   $("form").on('submit', function(event) {
     event.preventDefault();
     const content = $("#tweet-text").val();

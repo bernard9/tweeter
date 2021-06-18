@@ -68,9 +68,9 @@ $(document).ready(function() {
     event.preventDefault();
     const content = $("#tweet-text").val();
     if (content.length > 140) {
-      alert("Message exceeds 140 characters");
-    } else if (content === '') {
-      alert("Message is empty");
+      $(".error").text("⚠️ Message exceeds 140 characters ⚠️").slideDown();
+    } else if (content.trim() === '') {
+      $(".error").text("⚠️ Message is empty ⚠️").slideDown();
     } else {
       $.ajax({
         url: "/tweets",
@@ -79,6 +79,7 @@ $(document).ready(function() {
         success: function() {
           $("#tweet-text").val("").focus();
           $(".counter").text("140");
+          $(".error").hide();
           loadTweets();
         }
       });

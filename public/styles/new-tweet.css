@@ -28,3 +28,11 @@ button {
 
 }
 
+.error {
+  display:none;
+  color:red;
+  border: solid 4px;
+  padding: 0.5em;
+  text-align: center;
+}
+

@@ -19,3 +19,7 @@ This repository is the starter code for the project: Students will fork and clon
 - Chance 1.0.2
 - md5 2.1.0
 
+## Screenshots
+
+!["Desktop View"](https://github.com/bernard9/tweeter/blob/master/docs/Screenshot%202021-06-18%2000.04.15.png)
+!["Mobile View"](https://github.com/bernard9/tweeter/blob/master/docs/Screenshot%202021-06-18%2000.21.54.png)

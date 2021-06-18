@@ -21,5 +21,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
+Desktop View:
 !["Desktop View"](https://github.com/bernard9/tweeter/blob/master/docs/Screenshot%202021-06-18%2000.04.15.png)
+
+Mobile View:
 !["Mobile View"](https://github.com/bernard9/tweeter/blob/master/docs/Screenshot%202021-06-18%2000.21.54.png)

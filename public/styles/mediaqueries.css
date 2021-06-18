@@ -1,0 +1,18 @@
+@media only screen and (min-width: 1024px){
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+  .container{
+    margin-top: 120px;
+    width: 50%;
+  }
+  .header{
+    margin: 2em;
+    margin-top: 170px;
+    padding-top: 1em;
+    width: 25%;
+    height: 25%;
+    border-radius: 25px;
+  }
+}

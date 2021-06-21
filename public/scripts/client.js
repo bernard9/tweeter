@@ -63,14 +63,15 @@ $(document).ready(function() {
     });
   };
 
-  // nav arrow button hides textarea by default, toggles show and hide
+  // nav arrow button hides textarea by default, toggles show and hide also focus to text area
   $('.new-tweet').hide();
   $('.nav-button').on("click", function() {
-    $('.new-tweet').toggle();
+    $('.new-tweet').toggle()
+    $("#tweet-text").focus();;
   });
 
   // detects if no characters (excluding start and end spaces), or over 140 characters.
-  // If neither: clear textarea, reset counter, clear any error text and prepend new Tweet element to list.
+  // If neither: clear textarea, returns focus to text area, reset counter, clear any error text and prepend new Tweet element to list.
   $("form").on('submit', function(event) {
     event.preventDefault();
     const content = $("#tweet-text").val();
